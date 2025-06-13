@@ -1,0 +1,29 @@
+[
+  {
+    "title": "📚 경제 문해력 성장기 3탄 - 파르페 하나로 배우는 생산의 3요소",
+    "description": "경제 개념을 재미있게 배울 수 있는 경제 문해력 성장기 프로그램의 세 번째 이야기를 소개합니다.",
+    "category": "경제교육",
+    "image": "images/parfait.jpg",
+    "link": "#",
+    "date": "2025년 4월 27일",
+    "comments": "댓글 4개"
+  },
+  {
+    "title": "🤝 실천형 창업가 교육, 군포에서 발표까지!",
+    "description": "군포의 한 중학교에서 진행된 창업가 교육 프로그램의 여정을 소개합니다.",
+    "category": "창업교육",
+    "image": "images/startup.jpg",
+    "link": "#",
+    "date": "2025년 4월 26일",
+    "comments": "댓글 0개"
+  },
+  {
+    "title": "🏪 쿠키가게 체험으로 배우는 경제교육, 이렇게 하면 성공!",
+    "description": "경기도 의정부에서 초등학생들과 함께한 기업가 교육 활동 사례입니다.",
+    "category": "경제교육",
+    "image": "images/cookie.jpg",
+    "link": "#",
+    "date": "2025년 4월 26일",
+    "comments": "댓글 0개"
+  }
+]
