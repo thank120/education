@@ -1,82 +1,105 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>교육 프로그램 - 가치교육연구소</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body { font-family: 'Noto Sans KR', sans-serif; }
-  </style>
 </head>
-<body class="bg-gray-50">
-  <section class="py-16">
-    <div class="max-w-6xl mx-auto text-center px-4">
-      <h3 class="text-sm font-semibold text-indigo-600">교육 프로그램</h3>
-      <h2 class="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl">다양한 교육 분야의 전문 프로그램</h2>
-      <p class="mt-4 text-lg text-gray-500">가치교육연구소에서 제공하는 다양한 교육 프로그램을 소개합니다.</p>
-    </div>
-
-    <div class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto px-4">
-      <!-- 카드 1: 경제교육 -->
-      <div class="bg-white rounded-lg shadow p-6">
-        <div class="text-indigo-600 text-3xl mb-2">ⓘ</div>
-        <h3 class="text-lg font-bold text-gray-900 mb-1">경제교육</h3>
-        <p class="text-gray-600 text-sm mb-4">경제 문해력 성장기, 창업가 교육, 기업가정신 등 실용적인 경제교육 프로그램을 제공합니다.</p>
-        <ul class="text-sm text-gray-500 space-y-1 mb-4">
-          <li>✔ 경제 문해력 성장기</li>
-          <li>✔ 창업가 교육</li>
-          <li>✔ 용돈 관리 교육</li>
-        </ul>
-        <button class="w-full py-2 text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-700 rounded">자세히 보기 ⌄</button>
+<body class="bg-gray-50 text-gray-800">
+  <section id="programs" class="py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="text-sm font-semibold text-indigo-600 tracking-wide uppercase">교육 프로그램</h2>
+        <p class="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl">
+          다양한 교육 분야의 전문 프로그램
+        </p>
+        <p class="mt-4 text-lg text-gray-500">
+          가치교육연구소에서 제공하는 다양한 교육 프로그램을 소개합니다.
+        </p>
       </div>
 
-      <!-- 카드 2: 폭력예방교육 -->
-      <div class="bg-white rounded-lg shadow p-6">
-        <div class="text-pink-500 text-3xl mb-2">🔒</div>
-        <h3 class="text-lg font-bold text-gray-900 mb-1">폭력예방교육</h3>
-        <p class="text-gray-600 text-sm mb-4">학교폭력, 가정폭력, 성폭력 예방을 위한 교육 프로그램으로 안전한 사회 환경을 조성합니다.</p>
-        <ul class="text-sm text-gray-500 space-y-1 mb-4">
-          <li>✔ 학교폭력 예방교육</li>
-          <li>✔ 가정폭력 예방교육</li>
-          <li>✔ 성폭력 예방교육</li>
-        </ul>
-        <button class="w-full py-2 text-sm font-semibold text-white bg-pink-500 hover:bg-pink-600 rounded">자세히 보기 ⌄</button>
+      <div class="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- 프로그램 카드 템플릿 -->
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-md transition">
+          <div class="flex items-center">
+            <div class="h-10 w-10 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center text-xl font-bold">ⓘ</div>
+            <h3 class="ml-4 text-lg font-semibold">경제교육</h3>
+          </div>
+          <p class="mt-4 text-sm text-gray-600">
+            경제 문해력 성장기, 창업가 교육, 기업가정신 등 실용적인 경제교육 프로그램을 제공합니다.
+          </p>
+          <ul class="mt-4 space-y-2 text-sm text-gray-600">
+            <li class="flex items-center">
+              <span class="text-indigo-500 mr-2">✔</span> 경제 문해력 성장기
+            </li>
+            <li class="flex items-center">
+              <span class="text-indigo-500 mr-2">✔</span> 창업가 교육
+            </li>
+            <li class="flex items-center">
+              <span class="text-indigo-500 mr-2">✔</span> 용돈 관리 교육
+            </li>
+          </ul>
+          <button class="mt-6 w-full bg-indigo-600 text-white py-2 rounded hover:bg-indigo-700 text-sm font-semibold">자세히 보기</button>
+        </div>
+
+        <!-- 폭력예방교육 카드 -->
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-md transition">
+          <div class="flex items-center">
+            <div class="h-10 w-10 rounded-full bg-pink-100 text-pink-600 flex items-center justify-center text-xl font-bold">🔒</div>
+            <h3 class="ml-4 text-lg font-semibold">폭력예방교육</h3>
+          </div>
+          <p class="mt-4 text-sm text-gray-600">
+            학교폭력, 가정폭력, 성폭력 예방을 위한 프로그램으로 안전한 환경을 조성합니다.
+          </p>
+          <ul class="mt-4 space-y-2 text-sm text-gray-600">
+            <li class="flex items-center"><span class="text-pink-500 mr-2">✔</span> 학교폭력 예방교육</li>
+            <li class="flex items-center"><span class="text-pink-500 mr-2">✔</span> 가정폭력 예방교육</li>
+            <li class="flex items-center"><span class="text-pink-500 mr-2">✔</span> 성폭력 예방교육</li>
+          </ul>
+          <button class="mt-6 w-full bg-pink-600 text-white py-2 rounded hover:bg-pink-700 text-sm font-semibold">자세히 보기</button>
+        </div>
+
+        <!-- 인성교육 카드 -->
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-md transition">
+          <div class="flex items-center">
+            <div class="h-10 w-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xl font-bold">💚</div>
+            <h3 class="ml-4 text-lg font-semibold">인성교육</h3>
+          </div>
+          <p class="mt-4 text-sm text-gray-600">
+            배려, 존중, 협력 등 인성 함양을 위한 체계적인 프로그램을 제공합니다.
+          </p>
+          <ul class="mt-4 space-y-2 text-sm text-gray-600">
+            <li class="flex items-center"><span class="text-green-500 mr-2">✔</span> 감정 조절 교육</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✔</span> 공감 능력 향상</li>
+            <li class="flex items-center"><span class="text-green-500 mr-2">✔</span> 협력과 배려 교육</li>
+          </ul>
+          <button class="mt-6 w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 text-sm font-semibold">자세히 보기</button>
+        </div>
+
+        <!-- 진로교육 카드 -->
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-md transition">
+          <div class="flex items-center">
+            <div class="h-10 w-10 rounded-full bg-yellow-100 text-yellow-600 flex items-center justify-center text-xl font-bold">🎓</div>
+            <h3 class="ml-4 text-lg font-semibold">진로교육</h3>
+          </div>
+          <p class="mt-4 text-sm text-gray-600">
+            자기이해, 직업탐색, 진로설계 등 진로교육 프로그램을 제공합니다.
+          </p>
+          <ul class="mt-4 space-y-2 text-sm text-gray-600">
+            <li class="flex items-center"><span class="text-yellow-500 mr-2">✔</span> 자기이해 프로그램</li>
+            <li class="flex items-center"><span class="text-yellow-500 mr-2">✔</span> 직업탐색 프로그램</li>
+            <li class="flex items-center"><span class="text-yellow-500 mr-2">✔</span> 진로설계 프로그램</li>
+          </ul>
+          <button class="mt-6 w-full bg-yellow-600 text-white py-2 rounded hover:bg-yellow-700 text-sm font-semibold">자세히 보기</button>
+        </div>
       </div>
 
-      <!-- 카드 3: 인성교육 -->
-      <div class="bg-white rounded-lg shadow p-6">
-        <div class="text-green-600 text-3xl mb-2">💚</div>
-        <h3 class="text-lg font-bold text-gray-900 mb-1">인성교육</h3>
-        <p class="text-gray-600 text-sm mb-4">배려, 존중, 협력 등 인성 함양을 위한 체계적인 교육 프로그램을 제공합니다.</p>
-        <ul class="text-sm text-gray-500 space-y-1 mb-4">
-          <li>✔ 감정 조절 교육</li>
-          <li>✔ 공감 능력 향상</li>
-          <li>✔ 협력과 배려 교육</li>
-        </ul>
-        <button class="w-full py-2 text-sm font-semibold text-white bg-green-600 hover:bg-green-700 rounded">자세히 보기 ⌄</button>
+      <div class="mt-12 text-center">
+        <a href="#contact" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700">
+          프로그램 신청하기 →
+        </a>
       </div>
-
-      <!-- 카드 4: 진로교육 -->
-      <div class="bg-white rounded-lg shadow p-6">
-        <div class="text-yellow-600 text-3xl mb-2">👜</div>
-        <h3 class="text-lg font-bold text-gray-900 mb-1">진로교육</h3>
-        <p class="text-gray-600 text-sm mb-4">자기이해, 직업탐색, 진로설계 등 체계적인 진로교육 프로그램을 제공합니다.</p>
-        <ul class="text-sm text-gray-500 space-y-1 mb-4">
-          <li>✔ 자기이해 프로그램</li>
-          <li>✔ 직업탐색 프로그램</li>
-          <li>✔ 진로설계 프로그램</li>
-        </ul>
-        <button class="w-full py-2 text-sm font-semibold text-white bg-yellow-500 hover:bg-yellow-600 rounded">자세히 보기 ⌄</button>
-      </div>
-    </div>
-
-    <div class="mt-10 text-center">
-      <a href="#contact" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded shadow">
-        프로그램 신청하기 →
-      </a>
     </div>
   </section>
 </body>
