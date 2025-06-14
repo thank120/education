@@ -69,7 +69,7 @@
         <p class="text-sm text-indigo-600 mt-1">* 표시는 필수 입력 항목입니다</p>
       </div>
 
-      <form id="lecture-form" class="p-8 space-y-6">
+      <form id="lecture-form" name="lecture-form" class="p-8 space-y-6">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <label class="block text-sm font-medium mb-2 form-label" for="name">이름</label>
@@ -136,7 +136,7 @@
   </section>
 
   <script>
-    emailjs.init("YKsgLK8wbCARgqZ8U"); // 퍼블릭 키
+    emailjs.init("YKsgLK8wbCARgqZ8U"); // EmailJS 퍼블릭 키
 
     const form = document.getElementById('lecture-form');
     const popup = document.getElementById('popup');
