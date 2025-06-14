@@ -1,71 +1,523 @@
+
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>진로교육 - 가치교육연구소</title>
+  <title>경제교육 - 가치교육연구소</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     body {
       font-family: 'Noto Sans KR', sans-serif;
+      scroll-behavior: smooth;
+    }
+    .gradient-bg {
+      background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+    }
+    .card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .testimonial-slider {
+      overflow: hidden;
+      position: relative;
+    }
+    .testimonial-track {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+    .testimonial {
+      flex: 0 0 100%;
     }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-  <section class="text-center py-12 px-4">
-    <h2 class="text-sm font-semibold text-indigo-600 tracking-widest uppercase">교육 프로그램</h2>
-    <p class="mt-2 text-4xl font-extrabold text-gray-900">진로교육</p>
-    <p class="mt-4 text-gray-600 text-base max-w-4xl mx-auto leading-relaxed">
-      자기이해를 바탕으로 직업세계를 탐색하고, 진로를 설계하는 데 필요한 역량을 기릅니다.
-    </p>
-  </section>
-
-  <div class="max-w-3xl mx-auto px-4">
-    <img src="/education/images/진로교육.jpg" alt="진로교육 이미지" class="rounded-xl shadow-lg w-full mb-10" />
-  </div>
-
-  <section class="max-w-4xl mx-auto px-6 space-y-12 text-center">
-    <div>
-      <h3 class="text-2xl font-bold mb-2">🔍 프로그램 개요</h3>
-      <p class="text-gray-700 leading-relaxed">
-        진로교육은 청소년들이 자신의 흥미, 가치관, 성격을 이해하고 다양한 직업군을 탐색하여 자신의 진로를 주체적으로 설계하도록 돕는 교육입니다.
-      </p>
+  <!-- 헤더 섹션 -->
+  <header class="gradient-bg text-white py-16 px-4 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <defs>
+          <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="1"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#grid)" />
+      </svg>
     </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 text-left">
-      <div>
-        <h3 class="text-2xl font-bold mb-2">📚 주요 교육 내용</h3>
-        <ul class="list-disc list-inside text-gray-700">
-          <li>자기이해 검사 및 해석</li>
-          <li>직업군 탐색 활동</li>
-          <li>진로 인터뷰 및 직업 브로슈어 만들기</li>
-          <li>나만의 진로로드맵 설계</li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="text-2xl font-bold mb-2">🌟 기대 효과</h3>
-        <ul class="list-disc list-inside text-gray-700">
-          <li>자기이해 및 자기표현 능력 향상</li>
-          <li>진로탐색 역량 강화</li>
-          <li>진로설계의 주도성 및 동기 강화</li>
-        </ul>
+    <div class="max-w-5xl mx-auto relative z-10">
+      <div class="text-center">
+        <span class="inline-block px-3 py-1 bg-indigo-800 bg-opacity-50 rounded-full text-sm font-medium mb-4">교육 프로그램</span>
+        <h1 class="text-5xl font-bold mb-6">경제교육</h1>
+        <p class="text-xl max-w-3xl mx-auto text-indigo-100 leading-relaxed">
+          돈의 흐름과 가치소비를 이해하고, 합리적인 소비습관과 창의적인 경제활동을 학습합니다.
+        </p>
       </div>
     </div>
+  </header>
 
-    <div>
-      <h3 class="text-2xl font-bold mb-2">👥 대상 및 운영 방식</h3>
-      <p class="text-gray-700">
-        초등학교 고학년 ~ 중학생 대상 / 1~4차시 구성 / 검사, 활동지, 인터뷰 중심
-      </p>
+  <!-- 이미지 및 소개 섹션 -->
+  <section class="py-16 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col md:flex-row gap-10 items-center">
+        <div class="md:w-1/2">
+          <div class="relative">
+            <div class="absolute -top-4 -left-4 w-full h-full bg-indigo-200 rounded-xl"></div>
+            <div class="relative z-10">
+              <svg class="w-full h-auto" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+                <rect width="600" height="400" rx="12" fill="#f3f4f6"/>
+                <circle cx="300" cy="180" r="120" fill="#6366f1" opacity="0.8"/>
+                <path d="M240,180 L360,180 M300,120 L300,240" stroke="white" stroke-width="8" stroke-linecap="round"/>
+                <rect x="150" y="280" width="300" height="40" rx="6" fill="#4f46e5"/>
+                <rect x="180" y="330" width="240" height="20" rx="4" fill="#818cf8"/>
+                <circle cx="150" cy="100" r="30" fill="#818cf8"/>
+                <circle cx="450" cy="100" r="30" fill="#818cf8"/>
+                <path d="M100,200 Q300,100 500,200" stroke="#4f46e5" stroke-width="6" fill="none" stroke-dasharray="10 5"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="md:w-1/2">
+          <h2 class="text-3xl font-bold mb-6 text-indigo-900">🪙 프로그램 개요</h2>
+          <p class="text-lg text-gray-700 leading-relaxed mb-8">
+            경제교육은 실생활과 밀접한 다양한 사례를 통해 초·중등학생들이 경제 감각을 기를 수 있도록 돕는 실천 중심 프로그램입니다. 
+            학생들은 용돈 관리부터 창업 아이디어 기획까지 다양한 경제 활동을 체험하며 미래 경제 인재로 성장합니다.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <div class="bg-indigo-100 px-4 py-2 rounded-full text-indigo-700 font-medium">초등 고학년</div>
+            <div class="bg-indigo-100 px-4 py-2 rounded-full text-indigo-700 font-medium">중학생</div>
+            <div class="bg-indigo-100 px-4 py-2 rounded-full text-indigo-700 font-medium">1~4차시</div>
+            <div class="bg-indigo-100 px-4 py-2 rounded-full text-indigo-700 font-medium">체험형</div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <div class="text-center mt-16 mb-12">
-    <a href="/education/programs.html" class="inline-block bg-indigo-600 text-white text-lg font-semibold py-3 px-6 rounded-xl hover:bg-indigo-700 transition">
-      프로그램 목록으로 돌아가기
-    </a>
-  </div>
-</body>
+  <!-- 탭 메뉴 섹션 -->
+  <section class="py-16 px-4 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-12 text-indigo-900">프로그램 상세 정보</h2>
+      
+      <div class="mb-8 border-b border-gray-200">
+        <div class="flex flex-wrap -mb-px">
+          <button class="tab-btn inline-block p-4 text-indigo-600 border-b-2 border-indigo-600 rounded-t-lg active" data-tab="content">
+            주요 교육 내용
+          </button>
+          <button class="tab-btn inline-block p-4 text-gray-500 hover:text-indigo-600 border-b-2 border-transparent hover:border-indigo-600 rounded-t-lg" data-tab="effects">
+            기대 효과
+          </button>
+          <button class="tab-btn inline-block p-4 text-gray-500 hover:text-indigo-600 border-b-2 border-transparent hover:border-indigo-600 rounded-t-lg" data-tab="curriculum">
+            커리큘럼
+          </button>
+        </div>
+      </div>
+      
+      <div id="content" class="tab-content active">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-indigo-50 p-6 rounded-xl card">
+            <div class="flex items-center mb-4">
+              <div class="bg-indigo-600 text-white p-3 rounded-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold ml-4">경제 문해력 기르기</h3>
+            </div>
+            <p class="text-gray-700">경제 용어와 개념을 쉽게 이해하고 일상생활에서 경제 현상을 읽어낼 수 있는 능력을 키웁니다.</p>
+          </div>
+          
+          <div class="bg-indigo-50 p-6 rounded-xl card">
+            <div class="flex items-center mb-4">
+              <div class="bg-indigo-600 text-white p-3 rounded-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold ml-4">합리적인 소비와 예산 세우기</h3>
+            </div>
+            <p class="text-gray-700">필요와 욕구를 구분하고 제한된 자원으로 최대 효용을 얻는 합리적 소비 방법을 배웁니다.</p>
+          </div>
+          
+          <div class="bg-indigo-50 p-6 rounded-xl card">
+            <div class="flex items-center mb-4">
+              <div class="bg-indigo-600 text-white p-3 rounded-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold ml-4">나만의 창업 아이디어 기획</h3>
+            </div>
+            <p class="text-gray-700">문제 해결을 위한 창의적인 비즈니스 모델을 구상하고 실제 창업 계획서를 작성해봅니다.</p>
+          </div>
+          
+          <div class="bg-indigo-50 p-6 rounded-xl card">
+            <div class="flex items-center mb-4">
+              <div class="bg-indigo-600 text-white p-3 rounded-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold ml-4">용돈기입장 및 자산관리 실습</h3>
+            </div>
+            <p class="text-gray-700">수입과 지출을 기록하고 저축 목표를 세워 실천하는 자산관리의 기초를 배웁니다.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div id="effects" class="tab-content">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-indigo-50 p-6 rounded-xl text-center card">
+            <div class="bg-white w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4 shadow-md">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3">합리적인 소비습관 형성</h3>
+            <p class="text-gray-700">필요와 욕구를 구분하고 계획적인 소비를 통해 건강한 금융 습관을 형성합니다.</p>
+          </div>
+          
+          <div class="bg-indigo-50 p-6 rounded-xl text-center card">
+            <div class="bg-white w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4 shadow-md">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3">경제적 의사결정 능력 향상</h3>
+            <p class="text-gray-700">다양한 상황에서 비용과 편익을 고려한 합리적인 의사결정 능력을 기릅니다.</p>
+          </div>
+          
+          <div class="bg-indigo-50 p-6 rounded-xl text-center card">
+            <div class="bg-white w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4 shadow-md">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold mb-3">기업가정신과 창의력 향상</h3>
+            <p class="text-gray-700">문제 해결 중심의 사고와 혁신적인 아이디어 창출 능력을 키웁니다.</p>
+          </div>
+        </div>
+        
+        <div class="mt-12">
+          <h3 class="text-xl font-bold mb-6 text-center">학습 효과 분석</h3>
+          <div class="bg-white p-6 rounded-xl shadow-md">
+            <canvas id="effectChart" width="400" height="200"></canvas>
+          </div>
+        </div>
+      </div>
+      
+      <div id="curriculum" class="tab-content">
+        <div class="overflow-hidden rounded-xl shadow">
+          <table class="min-w-full bg-white">
+            <thead class="bg-indigo-600 text-white">
+              <tr>
+                <th class="py-3 px-4 text-left">차시</th>
+                <th class="py-3 px-4 text-left">주제</th>
+                <th class="py-3 px-4 text-left">주요 활동</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              <tr class="hover:bg-indigo-50">
+                <td class="py-4 px-4">1차시</td>
+                <td class="py-4 px-4 font-medium">경제의 기초 개념</td>
+                <td class="py-4 px-4">경제 용어 빙고 게임, 경제 현상 찾기</td>
+              </tr>
+              <tr class="hover:bg-indigo-50">
+                <td class="py-4 px-4">2차시</td>
+                <td class="py-4 px-4 font-medium">합리적 소비와 예산 관리</td>
+                <td class="py-4 px-4">용돈기입장 작성, 가상 쇼핑 체험</td>
+              </tr>
+              <tr class="hover:bg-indigo-50">
+                <td class="py-4 px-4">3차시</td>
+                <td class="py-4 px-4 font-medium">저축과 투자의 이해</td>
+                <td class="py-4 px-4">복리 계산하기, 모의 투자 게임</td>
+              </tr>
+              <tr class="hover:bg-indigo-50">
+                <td class="py-4 px-4">4차시</td>
+                <td class="py-4 px-4 font-medium">창업 아이디어 워크숍</td>
+                <td class="py-4 px-4">문제 해결형 비즈니스 모델 구상, 발표</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 학생 후기 섹션 -->
+  <section class="py-16 px-4 bg-indigo-50">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-12 text-indigo-900">학생 후기</h2>
+      
+      <div class="testimonial-slider">
+        <div class="testimonial-track">
+          <div class="testimonial px-4">
+            <div class="bg-white p-6 rounded-xl shadow-md">
+              <div class="flex items-center mb-4">
+                <div class="w-12 h-12 bg-indigo-200 rounded-full flex items-center justify-center">
+                  <span class="text-indigo-700 font-bold">초6</span>
+                </div>
+                <div class="ml-4">
+                  <h4 class="font-bold">김민준 학생</h4>
+                  <div class="flex text-yellow-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <p class="text-gray-700">"용돈기입장을 쓰는 법을 배우고 나서 제 용돈을 더 잘 관리하게 되었어요. 이제 원하는 것을 사기 위해 계획을 세우고 저축도 하고 있어요!"</p>
+            </div>
+          </div>
+          
+          <div class="testimonial px-4">
+            <div class="bg-white p-6 rounded-xl shadow-md">
+              <div class="flex items-center mb-4">
+                <div class="w-12 h-12 bg-indigo-200 rounded-full flex items-center justify-center">
+                  <span class="text-indigo-700 font-bold">중2</span>
+                </div>
+                <div class="ml-4">
+                  <h4 class="font-bold">이서연 학생</h4>
+                  <div class="flex text-yellow-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <p class="text-gray-700">"창업 아이디어 워크숍이 정말 재미있었어요. 우리 동네 문제를 해결하는 비즈니스 모델을 만들면서 경제가 우리 생활과 밀접하다는 것을 알게 되었습니다."</p>
+            </div>
+          </div>
+          
+          <div class="testimonial px-4">
+            <div class="bg-white p-6 rounded-xl shadow-md">
+              <div class="flex items-center mb-4">
+                <div class="w-12 h-12 bg-indigo-200 rounded-full flex items-center justify-center">
+                  <span class="text-indigo-700 font-bold">중1</span>
+                </div>
+                <div class="ml-4">
+                  <h4 class="font-bold">박지호 학생</h4>
+                  <div class="flex text-yellow-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <p class="text-gray-700">"모의 투자 게임이 가장 기억에 남아요. 복리의 개념을 배우고 장기 투자의 중요성을 알게 되었습니다. 이제 용돈의 일부를 저축하기 시작했어요."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="flex justify-center mt-6 space-x-2">
+        <button id="prev-testimonial" class="bg-indigo-600 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-indigo-700 focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <button id="next-testimonial" class="bg-indigo-600 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-indigo-700 focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 신청 및 문의 섹션 -->
+  <section class="py-16 px-4">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6 text-indigo-900">프로그램 신청 및 문의</h2>
+      <p class="text-lg text-gray-700 mb-8 max-w-3xl mx-auto">
+        경제교육 프로그램에 관심이 있으신가요? 아래 버튼을 통해 신청하거나 더 자세한 정보를 문의하세요.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="#" class="bg-indigo-600 text-white text-lg font-semibold py-3 px-8 rounded-xl hover:bg-indigo-700 transition shadow-md">
+          프로그램 신청하기
+        </a>
+        <a href="/education/programs.html" class="bg-white text-indigo-600 text-lg font-semibold py-3 px-8 rounded-xl border-2 border-indigo-600 hover:bg-indigo-50 transition shadow-md">
+          프로그램 목록으로 돌아가기
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 푸터 -->
+  <footer class="bg-gray-900 text-white py-10 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-6 md:mb-0">
+          <h2 class="text-2xl font-bold">가치교육연구소</h2>
+          <p class="text-gray-400 mt-2">미래 인재를 위한 가치 중심 교육</p>
+        </div>
+        <div class="flex space-x-6">
+          <a href="#" class="text-gray-400 hover:text-white transition">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
+            </svg>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white transition">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"></path>
+            </svg>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-white transition">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
+        <p>© 2023 가치교육연구소. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // 탭 기능
+    document.addEventListener('DOMContentLoaded', function() {
+      const tabBtns = document.querySelectorAll('.tab-btn');
+      const tabContents = document.querySelectorAll('.tab-content');
+      
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // 모든 탭 버튼 비활성화
+          tabBtns.forEach(b => {
+            b.classList.remove('text-indigo-600', 'border-indigo-600');
+            b.classList.add('text-gray-500', 'border-transparent');
+          });
+          
+          // 클릭한 탭 버튼 활성화
+          btn.classList.add('text-indigo-600', 'border-indigo-600');
+          btn.classList.remove('text-gray-500', 'border-transparent');
+          
+          // 모든 탭 콘텐츠 숨기기
+          tabContents.forEach(content => {
+            content.classList.remove('active');
+          });
+          
+          // 선택한 탭 콘텐츠 표시
+          const tabId = btn.getAttribute('data-tab');
+          document.getElementById(tabId).classList.add('active');
+        });
+      });
+      
+      // 차트 생성
+      const ctx = document.getElementById('effectChart').getContext('2d');
+      const effectChart = new Chart(ctx, {
+        type: 'radar',
+        data: {
+          labels: ['경제 이해력', '합리적 소비', '저축 습관', '창의적 사고', '문제해결력'],
+          datasets: [{
+            label: '교육 전',
+            data: [30, 40, 25, 35, 30],
+            backgroundColor: 'rgba(99, 102, 241, 0.2)',
+            borderColor: 'rgba(99, 102, 241, 1)',
+            borderWidth: 1
+          }, {
+            label: '교육 후',
+            data: [70, 85, 75, 80, 75],
+            backgroundColor: 'rgba(79, 70, 229, 0.2)',
+            borderColor: 'rgba(79, 70, 229, 1)',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            r: {
+              angleLines: {
+                display: true
+              },
+              suggestedMin: 0,
+              suggestedMax: 100
+            }
+          }
+        }
+      });
+      
+      // 후기 슬라이더
+      let currentSlide = 0;
+      const testimonials = document.querySelectorAll('.testimonial');
+      const track = document.querySelector('.testimonial-track');
+      const prevBtn = document.getElementById('prev-testimonial');
+      const nextBtn = document.getElementById('next-testimonial');
+      
+      function updateSlider() {
+        track.style.transform = `translateX(-${currentSlide * 100}%)`;
+      }
+      
+      prevBtn.addEventListener('click', () => {
+        currentSlide = (currentSlide > 0) ? currentSlide - 1 : testimonials.length - 1;
+        updateSlider();
+      });
+      
+      nextBtn.addEventListener('click', () => {
+        currentSlide = (currentSlide < testimonials.length - 1) ? currentSlide + 1 : 0;
+        updateSlider();
+      });
+      
+      // 자동 슬라이드
+      setInterval(() => {
+        currentSlide = (currentSlide < testimonials.length - 1) ? currentSlide + 1 : 0;
+        updateSlider();
+      }, 5000);
+    });
+  </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'94f76d361082d1db',t:'MTc0OTg3ODkzMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
