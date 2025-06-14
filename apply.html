@@ -136,15 +136,15 @@
   </section>
 
   <script>
-    emailjs.init("YKsgLK8wbCARgqZ8U"); // EmailJS 퍼블릭 키
+    emailjs.init("YKsgLK8wbCARgqZ8U"); // 퍼블릭 키
 
-    const form = document.getElementById('lecture-form');
+    const form = document.querySelector('form[name="lecture-form"]');
     const popup = document.getElementById('popup');
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
 
-      emailjs.sendForm('service_j4rjc9d', 'template_9wb0rhq', this)
+      emailjs.sendForm('service_j4rjc9d', 'template_9wb0rhq', form)
         .then(function () {
           form.reset();
           popup.style.display = 'block';
