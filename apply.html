@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>강의 신청하기 - 가치교육연구소</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -61,7 +61,7 @@
       <p class="text-gray-600 max-w-2xl mx-auto">원하시는 강의에 대해 신청서를 작성해주세요. 확인 후 빠르게 연락드리겠습니다.</p>
     </div>
 
-    <div id="popup" class="success-popup">✅ 신청이 성공적으로 접수되었습니다. 감사합니다!</div>
+    <div id="popup" class="success-popup">🎉 신청이 성공적으로 접수되었습니다. 감사합니다!</div>
 
     <div class="bg-white rounded-xl shadow-lg overflow-hidden">
       <div class="bg-indigo-50 p-6 border-b border-indigo-100">
@@ -136,23 +136,24 @@
   </section>
 
   <script>
-    // EmailJS 초기화
-    emailjs.init("YOUR_PUBLIC_KEY"); // ← 여기 본인 public key 입력
+    emailjs.init("YKsgLK8wbCARgqZ8U"); // 퍼블릭 키
 
     const form = document.getElementById('lecture-form');
     const popup = document.getElementById('popup');
 
-    form.addEventListener('submit', function(e) {
+    form.addEventListener('submit', function (e) {
       e.preventDefault();
-      emailjs.sendForm('service_j4rjc9d', 'YOUR_TEMPLATE_ID', this)
-        .then(function() {
+
+      emailjs.sendForm('service_j4rjc9d', 'template_9wb0rhq', this)
+        .then(function () {
           form.reset();
           popup.style.display = 'block';
           setTimeout(() => {
             popup.style.display = 'none';
           }, 5000);
-        }, function(error) {
-          alert('❌ 오류가 발생했습니다: ' + JSON.stringify(error));
+        }, function (error) {
+          alert('전송 중 오류가 발생했습니다. 다시 시도해주세요.');
+          console.error(error);
         });
     });
   </script>
