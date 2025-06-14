@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -5,67 +7,355 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>중독예방교육 - 가치교육연구소</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <style>
     body {
       font-family: 'Noto Sans KR', sans-serif;
+      background-color: #f8fafc;
+    }
+    .gradient-bg {
+      background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    }
+    .card {
+      transition: all 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    .content-section {
+      scroll-margin-top: 80px;
     }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
-
-  <section class="text-center py-12 px-4">
-    <h2 class="text-sm font-semibold text-indigo-600 tracking-widest uppercase">교육 프로그램</h2>
-    <p class="mt-2 text-4xl font-extrabold text-gray-900">중독예방교육</p>
-    <p class="mt-4 text-gray-600 text-base max-w-4xl mx-auto leading-relaxed">
-      디지털, 약물 등 다양한 중독 문제를 이해하고 올바른 사용습관과 자율적 조절능력을 기릅니다.
-    </p>
+<body class="text-gray-800">
+  <!-- Hero Section -->
+  <section class="gradient-bg text-white py-16 px-4 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <defs>
+          <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="1"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#grid)" />
+      </svg>
+    </div>
+    <div class="max-w-5xl mx-auto relative z-10">
+      <div class="text-center">
+        <span class="inline-block py-1 px-3 rounded-full bg-indigo-100 bg-opacity-20 text-white text-sm font-medium tracking-widest uppercase mb-4">교육 프로그램</span>
+        <h1 class="text-5xl font-bold mb-6">중독예방교육</h1>
+        <p class="text-xl text-indigo-100 max-w-3xl mx-auto leading-relaxed">
+          디지털, 약물 등 다양한 중독 문제를 이해하고 올바른 사용습관과 자율적 조절능력을 기릅니다.
+        </p>
+      </div>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" fill="#f8fafc">
+        <path d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
+      </svg>
+    </div>
   </section>
 
-  <div class="max-w-3xl mx-auto px-4">
-    <img src="/education/images/중독예방교육.jpg" alt="중독예방교육 이미지" class="rounded-xl shadow-lg w-full mb-10" />
+  <!-- Main Image -->
+  <div class="max-w-4xl mx-auto px-4 mb-16" data-aos="fade-up">
+    <div class="relative rounded-2xl overflow-hidden shadow-xl">
+      <!-- Placeholder SVG image since actual image URL might not work -->
+      <svg class="w-full h-80 bg-indigo-100" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+        <rect width="100%" height="100%" fill="#EEF2FF" />
+        <g transform="translate(400, 200)">
+          <path d="M-100,-50 L0,-100 L100,-50 L100,50 L0,100 L-100,50 Z" fill="#6366F1" fill-opacity="0.7" />
+          <circle cx="0" cy="0" r="60" fill="#4F46E5" fill-opacity="0.5" />
+          <text x="0" y="15" font-size="24" text-anchor="middle" fill="#1E293B" font-family="Noto Sans KR">중독예방교육</text>
+        </g>
+      </svg>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end">
+        <div class="p-6 text-white">
+          <h2 class="text-2xl font-bold">건강한 디지털 사용 습관 형성</h2>
+          <p class="text-indigo-100">자기조절력을 키우는 체계적인 교육 프로그램</p>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <section class="max-w-4xl mx-auto px-6 space-y-12 text-center">
-    <div>
-      <h3 class="text-2xl font-bold mb-2">💡 프로그램 개요</h3>
+  <!-- Program Overview -->
+  <section id="overview" class="max-w-4xl mx-auto px-6 mb-20 content-section" data-aos="fade-up">
+    <div class="bg-white rounded-2xl shadow-lg p-8 border border-indigo-100">
+      <div class="flex items-center mb-6">
+        <div class="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center mr-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+          </svg>
+        </div>
+        <h3 class="text-2xl font-bold text-gray-800">프로그램 개요</h3>
+      </div>
       <p class="text-gray-700 leading-relaxed">
-        디지털 중독, 스마트폰 과의존, 약물 사용 등 청소년기에 흔히 접할 수 있는 중독 문제를 예방하고, 건강한 자기조절력을 기르기 위한 교육입니다.
-      </p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 text-left">
-      <div>
-        <h3 class="text-2xl font-bold mb-2">📚 주요 교육 내용</h3>
-        <ul class="list-disc list-inside text-gray-700">
-          <li>중독의 개념과 뇌과학 이해</li>
-          <li>디지털 기기의 올바른 사용법</li>
-          <li>약물 중독의 위험성</li>
-          <li>중독 유도 상황에서의 대처법</li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="text-2xl font-bold mb-2">🚀 기대 효과</h3>
-        <ul class="list-disc list-inside text-gray-700">
-          <li>중독 위험요소 인식 능력 향상</li>
-          <li>자기조절력 및 선택 능력 강화</li>
-          <li>디지털·약물 안전 의식 고취</li>
-        </ul>
-      </div>
-    </div>
-
-    <div>
-      <h3 class="text-2xl font-bold mb-2">👥 대상 및 운영 방식</h3>
-      <p class="text-gray-700">
-        초등학교 고학년 ~ 중학생 대상 / 1~4차시 구성 / 사례 영상, 토론, 역할극 중심
+        디지털 중독, 스마트폰 과의존, 약물 사용 등 청소년기에 흔히 접할 수 있는 중독 문제를 예방하고, 건강한 자기조절력을 기르기 위한 교육입니다. 
+        현대 사회에서 청소년들이 직면하는 다양한 중독 위험 요소를 과학적으로 이해하고, 실생활에서 적용할 수 있는 예방 전략을 배웁니다.
       </p>
     </div>
   </section>
 
-  <div class="text-center mt-16 mb-12">
-    <a href="/education/programs.html" class="inline-block bg-indigo-600 text-white text-lg font-semibold py-3 px-6 rounded-xl hover:bg-indigo-700 transition">
+  <!-- Main Content -->
+  <section class="max-w-4xl mx-auto px-6 mb-20">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Educational Content -->
+      <div id="content" class="content-section" data-aos="fade-right">
+        <div class="bg-white rounded-2xl shadow-lg p-8 border border-indigo-100 h-full card">
+          <div class="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-4 text-gray-800">주요 교육 내용</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start">
+              <span class="inline-flex items-center justify-center rounded-full bg-indigo-50 h-6 w-6 mr-3 mt-0.5 flex-shrink-0">
+                <span class="text-indigo-600 text-sm font-medium">1</span>
+              </span>
+              <span>중독의 개념과 뇌과학적 이해</span>
+            </li>
+            <li class="flex items-start">
+              <span class="inline-flex items-center justify-center rounded-full bg-indigo-50 h-6 w-6 mr-3 mt-0.5 flex-shrink-0">
+                <span class="text-indigo-600 text-sm font-medium">2</span>
+              </span>
+              <span>디지털 기기의 올바른 사용법과 시간 관리</span>
+            </li>
+            <li class="flex items-start">
+              <span class="inline-flex items-center justify-center rounded-full bg-indigo-50 h-6 w-6 mr-3 mt-0.5 flex-shrink-0">
+                <span class="text-indigo-600 text-sm font-medium">3</span>
+              </span>
+              <span>약물 중독의 위험성과 사회적 영향</span>
+            </li>
+            <li class="flex items-start">
+              <span class="inline-flex items-center justify-center rounded-full bg-indigo-50 h-6 w-6 mr-3 mt-0.5 flex-shrink-0">
+                <span class="text-indigo-600 text-sm font-medium">4</span>
+              </span>
+              <span>중독 유도 상황에서의 효과적인 대처법</span>
+            </li>
+            <li class="flex items-start">
+              <span class="inline-flex items-center justify-center rounded-full bg-indigo-50 h-6 w-6 mr-3 mt-0.5 flex-shrink-0">
+                <span class="text-indigo-600 text-sm font-medium">5</span>
+              </span>
+              <span>건강한 대안 활동 탐색과 실천 방법</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Expected Effects -->
+      <div id="effects" class="content-section" data-aos="fade-left">
+        <div class="bg-white rounded-2xl shadow-lg p-8 border border-indigo-100 h-full card">
+          <div class="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-4 text-gray-800">기대 효과</h3>
+          <div class="space-y-4">
+            <div class="bg-indigo-50 rounded-lg p-4">
+              <h4 class="font-medium text-indigo-800 mb-1">중독 위험요소 인식 능력 향상</h4>
+              <p class="text-sm text-gray-700">잠재적 중독 상황을 사전에 식별하고 예방하는 능력을 키웁니다.</p>
+            </div>
+            <div class="bg-indigo-50 rounded-lg p-4">
+              <h4 class="font-medium text-indigo-800 mb-1">자기조절력 및 선택 능력 강화</h4>
+              <p class="text-sm text-gray-700">디지털 기기와 미디어 사용에 있어 스스로 조절하는 습관을 형성합니다.</p>
+            </div>
+            <div class="bg-indigo-50 rounded-lg p-4">
+              <h4 class="font-medium text-indigo-800 mb-1">디지털·약물 안전 의식 고취</h4>
+              <p class="text-sm text-gray-700">건강한 디지털 사용 문화와 약물 안전에 대한 인식을 높입니다.</p>
+            </div>
+            <div class="bg-indigo-50 rounded-lg p-4">
+              <h4 class="font-medium text-indigo-800 mb-1">대인관계 및 소통 능력 향상</h4>
+              <p class="text-sm text-gray-700">온라인을 넘어 오프라인에서의 건강한 관계 형성 능력을 기릅니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Target and Operation -->
+  <section id="target" class="max-w-4xl mx-auto px-6 mb-20 content-section" data-aos="fade-up">
+    <div class="bg-white rounded-2xl shadow-lg p-8 border border-indigo-100">
+      <div class="flex items-center mb-6">
+        <div class="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center mr-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+          </svg>
+        </div>
+        <h3 class="text-2xl font-bold text-gray-800">대상 및 운영 방식</h3>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h4 class="font-bold text-lg mb-3 text-indigo-700">교육 대상</h4>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-center">
+              <svg class="h-5 w-5 text-indigo-500 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              초등학교 고학년 (5-6학년)
+            </li>
+            <li class="flex items-center">
+              <svg class="h-5 w-5 text-indigo-500 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              중학생 (1-3학년)
+            </li>
+            <li class="flex items-center">
+              <svg class="h-5 w-5 text-indigo-500 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              학부모 및 교사 (별도 과정)
+            </li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="font-bold text-lg mb-3 text-indigo-700">운영 방식</h4>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-center">
+              <svg class="h-5 w-5 text-indigo-500 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              1~4차시 구성 (차시별 40-45분)
+            </li>
+            <li class="flex items-center">
+              <svg class="h-5 w-5 text-indigo-500 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              사례 영상, 토론, 역할극 중심 활동
+            </li>
+            <li class="flex items-center">
+              <svg class="h-5 w-5 text-indigo-500 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              15-30명 규모 학급/그룹 단위 진행
+            </li>
+            <li class="flex items-center">
+              <svg class="h-5 w-5 text-indigo-500 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+              </svg>
+              체험형 워크시트 및 실천 과제 제공
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Program Schedule -->
+  <section class="max-w-4xl mx-auto px-6 mb-20" data-aos="fade-up">
+    <h3 class="text-2xl font-bold mb-6 text-center">프로그램 차시별 구성</h3>
+    <div class="overflow-x-auto">
+      <table class="min-w-full bg-white rounded-xl shadow-lg overflow-hidden">
+        <thead class="bg-indigo-600 text-white">
+          <tr>
+            <th class="py-3 px-4 text-left">차시</th>
+            <th class="py-3 px-4 text-left">주제</th>
+            <th class="py-3 px-4 text-left">주요 활동</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200">
+          <tr class="hover:bg-indigo-50 transition">
+            <td class="py-3 px-4 font-medium">1차시</td>
+            <td class="py-3 px-4">중독의 이해와 위험성</td>
+            <td class="py-3 px-4">뇌과학 기반 중독 메커니즘 이해하기, 자가진단</td>
+          </tr>
+          <tr class="hover:bg-indigo-50 transition">
+            <td class="py-3 px-4 font-medium">2차시</td>
+            <td class="py-3 px-4">디지털 중독 예방</td>
+            <td class="py-3 px-4">스마트폰 사용 패턴 분석, 시간 관리 전략 수립</td>
+          </tr>
+          <tr class="hover:bg-indigo-50 transition">
+            <td class="py-3 px-4 font-medium">3차시</td>
+            <td class="py-3 px-4">약물 중독 예방</td>
+            <td class="py-3 px-4">약물 오남용 사례 분석, 거절하기 역할극</td>
+          </tr>
+          <tr class="hover:bg-indigo-50 transition">
+            <td class="py-3 px-4 font-medium">4차시</td>
+            <td class="py-3 px-4">건강한 대안 활동</td>
+            <td class="py-3 px-4">나만의 건강 습관 계획 세우기, 실천 다짐</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="max-w-4xl mx-auto px-6 mb-20" data-aos="fade-up">
+    <h3 class="text-2xl font-bold mb-6 text-center">교육 후기</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100">
+        <div class="flex items-center mb-4">
+          <div class="h-10 w-10 rounded-full bg-indigo-100 flex items-center justify-center mr-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+            </svg>
+          </div>
+          <div>
+            <p class="font-medium">김○○ 선생님</p>
+            <p class="text-sm text-gray-500">서울 ○○중학교</p>
+          </div>
+        </div>
+        <p class="text-gray-700 italic">"학생들이 스마트폰 사용에 대해 스스로 생각해보는 계기가 되었습니다. 특히 역할극을 통해 실제 상황에서의 대처법을 배울 수 있어 매우 유익했습니다."</p>
+      </div>
+      
+      <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100">
+        <div class="flex items-center mb-4">
+          <div class="h-10 w-10 rounded-full bg-indigo-100 flex items-center justify-center mr-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+            </svg>
+          </div>
+          <div>
+            <p class="font-medium">박○○ 학부모</p>
+            <p class="text-sm text-gray-500">초등학생 자녀</p>
+          </div>
+        </div>
+        <p class="text-gray-700 italic">"아이가 교육 후 스스로 스마트폰 사용 시간을 정하고 지키려는 모습을 보여 놀랐습니다. 가정에서도 함께 실천할 수 있는 방법을 알게 되어 좋았습니다."</p>
+      </div>
+    </div>
+  </section>
+
+   <!-- CTA 버튼 -->
+  <div class="text-center mb-20">
+    <a href="/education/programs.html" class="inline-flex items-center px-8 py-4 bg-indigo-600 text-white text-lg font-semibold rounded-xl hover:bg-indigo-700 transition transform hover:-translate-y-1 shadow-lg">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+      </svg>
       프로그램 목록으로 돌아가기
     </a>
   </div>
-</body>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize AOS
+      AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true
+      });
+      
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+          
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 70,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    });
+  </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'94f7811be17d3538',t:'MTc0OTg3OTc0Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
