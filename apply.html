@@ -55,7 +55,7 @@
 </head>
 <body class="pb-16">
 
-  <!-- 홈으로 가기 버튼 -->
+  <!-- 홈으로 가기 -->
   <header class="fixed top-0 left-0 w-full z-50 bg-indigo-500 text-white py-3 px-6 shadow-md flex items-center">
     <a href="index.html" class="flex items-center hover:opacity-90 transition">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-yellow-300" fill="currentColor" viewBox="0 0 20 20">
@@ -65,7 +65,7 @@
     </a>
   </header>
 
-  <!-- 신청 섹션 -->
+  <!-- 신청 폼 -->
   <section class="mt-20 max-w-3xl mx-auto py-12 px-6">
     <div class="text-center mb-12">
       <h1 class="text-4xl font-bold text-indigo-700 mb-4">강의 신청하기</h1>
@@ -74,8 +74,7 @@
 
     <div id="popup" class="success-popup">🎉 신청이 성공적으로 접수되었습니다. 감사합니다!</div>
 
-    <!-- ✅ name="lecture-form" 추가됨 -->
-    <form id="lecture-form" name="lecture-form" method="POST" action="#" class="bg-white rounded-xl shadow-lg p-8 space-y-6">
+    <form id="lecture-form" name="lecture-form" class="bg-white rounded-xl shadow-lg p-8 space-y-6">
       <div>
         <label class="block text-sm font-medium mb-2 form-label optional" for="organization">기관명</label>
         <input type="text" name="organization" id="organization" placeholder="기관명을 입력해주세요" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 form-input" />
@@ -140,7 +139,7 @@
   </section>
 
   <script>
-    emailjs.init("YKsgLK8wbCARgqZ8U"); // ✅ 본인의 PUBLIC KEY 사용
+    emailjs.init("YKsgLK8wbCARgqZ8U"); // 본인의 Public Key 사용
 
     const form = document.getElementById('lecture-form');
     const popup = document.getElementById('popup');
@@ -148,7 +147,7 @@
     form.addEventListener('submit', function (e) {
       e.preventDefault();
 
-      emailjs.sendForm('service_j4rjc9d', 'template_9wb0rhq', form) // ✅ 본인의 SERVICE ID, TEMPLATE ID 사용
+      emailjs.sendForm('service_j4rjc9d', 'template_9wb0rhq', form)
         .then(function () {
           form.reset();
           popup.style.display = 'block';
