@@ -74,7 +74,7 @@
 
     <div id="popup" class="success-popup">🎉 신청이 성공적으로 접수되었습니다. 감사합니다!</div>
 
-    <form id="lecture-form" name="lecture-form" class="bg-white rounded-xl shadow-lg p-8 space-y-6">
+    <form id="lecture-form" name="lecture-form" enctype="multipart/form-data" class="bg-white rounded-xl shadow-lg p-8 space-y-6">
       <div>
         <label class="block text-sm font-medium mb-2 form-label optional" for="organization">기관명</label>
         <input type="text" name="organization" id="organization" placeholder="기관명을 입력해주세요" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 form-input" />
@@ -139,7 +139,7 @@
   </section>
 
   <script>
-    emailjs.init("YKsgLK8wbCARgqZ8U"); // 본인의 Public Key 사용
+    emailjs.init("YKsgLK8wbCARgqZ8U"); // 본인의 Public Key
 
     const form = document.getElementById('lecture-form');
     const popup = document.getElementById('popup');
