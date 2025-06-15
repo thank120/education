@@ -62,7 +62,6 @@
   <!-- 🔙 홈으로 돌아가기 버튼 -->
   <header class="flex items-center p-4">
     <a href="index.html" class="home-button flex items-center text-indigo-700 font-semibold hover:text-indigo-900 transition">
-      <!-- Pixar 스타일 느낌의 귀여운 집 아이콘 (SVG) -->
       <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 mr-2 text-yellow-500 drop-shadow" fill="currentColor" viewBox="0 0 20 20">
         <path d="M10.707 1.293a1 1 0 00-1.414 0l-8 8a1 1 0 101.414 1.414L3 10.414V18a2 2 0 002 2h3a1 1 0 001-1v-5h2v5a1 1 0 001 1h3a2 2 0 002-2v-7.586l.293.293a1 1 0 001.414-1.414l-8-8z"/>
       </svg>
@@ -86,6 +85,12 @@
       </div>
 
       <form id="lecture-form" name="lecture-form" class="p-8 space-y-6">
+        <!-- 기관명 입력칸 추가 -->
+        <div>
+          <label class="block text-sm font-medium mb-2 form-label optional" for="organization">기관명</label>
+          <input type="text" name="organization" id="organization" placeholder="기관명을 입력해주세요" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 form-input" />
+        </div>
+
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <label class="block text-sm font-medium mb-2 form-label" for="name">이름</label>
