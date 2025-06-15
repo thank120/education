@@ -139,7 +139,7 @@
   </section>
 
   <script>
-    emailjs.init("YKsgLK8wbCARgqZ8U"); // 본인의 Public Key
+    emailjs.init("YKsgLK8wbCARgqZ8U"); // 당신의 public key 사용
 
     const form = document.getElementById('lecture-form');
     const popup = document.getElementById('popup');
@@ -147,7 +147,7 @@
     form.addEventListener('submit', function (e) {
       e.preventDefault();
 
-      emailjs.sendForm('service_j4rjc9d', 'template_uia41f', form) // 새 템플릿 ID로 변경됨
+      emailjs.sendForm('service_j4rjc9d', 'template_uiai41f', form)  // 🔧 여기서 템플릿 ID를 정확히 입력
         .then(function () {
           form.reset();
           popup.style.display = 'block';
